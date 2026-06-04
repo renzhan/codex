@@ -757,4 +757,4 @@ HttpSseProtocol 的 SSE 连接在审批期间需要保持打开。Codex 在发�
 4. **批量命令审批**：Codex 是逐个命令暂停的——每个匹配 `decision="prompt"` 的命令都会独立发出一个 `requestApproval` request，等待 response 后才继续执行下一个命令。不支持批量收集后一次性审批。
 5. **`acceptForSession` 的影响**：如果前端选择 `acceptForSession`，Codex 会在当前会话中缓存该决策，后续相同命令不再询问。需要评估这是否符合安全策略要求。
 6. **Granular policy 的 app-server 协议支持**：需要确认 HttpSseProtocol 中间层是否支持传递 granular 格式的 `approvalPolicy`（对象而非字符串）。如果不支持，可以退而使用 `"on-request"`，但会导致更多非预期的审批请求。
-
+haha
